@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmsro5pmr3tn"]
+
+[ext_resource type="Texture2D" uid="uid://bgbm18vxg6561" path="res://urchin-Recovered.png" id="1_0xpsw"]
+
+[node name="Urchin" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_0xpsw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(2.5, 2.5)
+polygon = PackedVector2Array(6, -12, 4, -13, 2, -10.4, -0.39999962, -5.200001, -3, -10.5, -4, -11, -5, -12, -6.5, -12, -7.799999, -11, -8, -10.5, -10.799999, -3.6000004, -19, -8, -21, -7, -18, 10, -17, 11, -11.025263, 12.999998, 1, 13, 8, 12, 15, 6, 15, 2.5, 16, 2, 16, -9, 14.5, -10.5, 8.5, -1.5)

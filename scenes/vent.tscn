@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://b40ruvyc7q8vx"]
+
+[ext_resource type="Script" uid="uid://dragg43ymhhwu" path="res://vent.gd" id="1_42pey"]
+[ext_resource type="Texture2D" uid="uid://cadm0vrf2av3j" path="res://vent2-Recovered.png" id="2_oy8i4"]
+[ext_resource type="Texture2D" uid="uid://davtq8mnx6hv6" path="res://vent1-Recovered.png" id="3_ive3w"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n7r3n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_oy8i4")
+}],
+"loop": true,
+"name": &"Active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ive3w")
+}],
+"loop": true,
+"name": &"Safe",
+"speed": 5.0
+}]
+
+[node name="Vent" type="Area2D"]
+script = ExtResource("1_42pey")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 4)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_n7r3n")
+animation = &"Active"
+autoplay = "Safe"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(13, -59)
+polygon = PackedVector2Array(2, 153, -15, 151, -19, 145, -28, 139, -41, 126, -47, 114, -50, 103, -52, 103, -52, 97, -54, 97, -54, 89, -56, 89, -56, 79, -57, 79, -58, 72, -60, 69, -60, 62, -62, 57, -62, 43, -60, 41, -50, 44, -36, -3, -23, -25, -14, -4, -6, -29, 3, -43, 8, -35, 10, -21, 16, -21, 16, -23, 26, -27, 36, -35, 41, -27, 46, -13, 48, -7, 64, -7, 68, -2, 63, 17, 56, 41, 48, 45, 44, 41, 44, 51, 52, 57, 52, 73, 58, 77, 60, 81, 52, 89, 39, 98, 40, 101, 42, 101, 42, 107, 44, 107, 44, 113, 40, 120, 18.360138, 127.05318, 16, 134, 10, 146)
+
+[node name="Timer" type="Timer" parent="."]

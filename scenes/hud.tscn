@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://clygwlc1e47u3"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 3.0
+offset_top = 34.0
+offset_right = 80.0
+offset_bottom = 68.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "Score: "
+horizontal_alignment = 1
+
+[node name="LivesLabel" type="Label" parent="."]
+offset_left = 3.0
+offset_top = 66.0
+offset_right = 80.0
+offset_bottom = 100.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "Lives: "
+horizontal_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="."]
+offset_left = 2.0
+offset_right = 130.0
+offset_bottom = 34.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "Highscore: "
+horizontal_alignment = 1
+
+[node name="StartLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = -17.0
+offset_right = 113.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "Press space to play!
+Press space to jump and down arrow to crouch
+Watch out for bright pink sea uchins and the elusive pufferfish that blend into the background."
+horizontal_alignment = 1

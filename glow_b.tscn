@@ -1,0 +1,87 @@
+[gd_scene load_steps=12 format=3 uid="uid://cni048q2m5e8l"]
+
+[ext_resource type="Script" uid="uid://bo3r6ba58upum" path="res://scenes/glow_b.gd" id="1_i3w34"]
+[ext_resource type="Texture2D" uid="uid://bgq24vesjai5v" path="res://GlowB damage-Recovered.png" id="1_io7u2"]
+[ext_resource type="Texture2D" uid="uid://bera0w7d7xs4p" path="res://GlowB-1-Recovered.png" id="2_i3w34"]
+[ext_resource type="Texture2D" uid="uid://f8ui4qj5kpem" path="res://GlowB-2-Recovered.png" id="3_ljl08"]
+[ext_resource type="Texture2D" uid="uid://ohtl28npyo0l" path="res://Glowby-attack-Recovered.png" id="4_grcpo"]
+[ext_resource type="Texture2D" uid="uid://cu8awgj8f6wmq" path="res://glowB crouch.png" id="5_0c8c4"]
+[ext_resource type="Texture2D" uid="uid://cus4iunkigl2l" path="res://GlowB-death-Recovered.png" id="6_qijus"]
+[ext_resource type="AudioStream" uid="uid://dr2vi8uyqh2fk" path="res://mixkit-jump-into-the-water-1180.wav" id="7_8aban"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wbmfk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_io7u2")
+}],
+"loop": true,
+"name": &"Damage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_i3w34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ljl08")
+}],
+"loop": true,
+"name": &"Walk1",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_grcpo")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_0c8c4")
+}],
+"loop": true,
+"name": &"crouch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_qijus")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j8b8g"]
+size = Vector2(28, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vpacp"]
+size = Vector2(23, 19)
+
+[node name="GlowB" type="CharacterBody2D"]
+process_mode = 3
+z_index = 1
+script = ExtResource("1_i3w34")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(15, 4)
+sprite_frames = SubResource("SpriteFrames_wbmfk")
+animation = &"Walk1"
+autoplay = "Walk1"
+frame_progress = 0.47294715
+
+[node name="RunCol" type="CollisionShape2D" parent="."]
+position = Vector2(20, 2.5)
+shape = SubResource("RectangleShape2D_j8b8g")
+
+[node name="DuckCol" type="CollisionShape2D" parent="."]
+position = Vector2(20.5, 6.5)
+shape = SubResource("RectangleShape2D_vpacp")
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_8aban")
+volume_db = -25.0

@@ -10,7 +10,11 @@ config_version=5
 
 [application]
 
+<<<<<<< HEAD
 config/name="GlowB's Glide That works"
+=======
+config/name="GlowB's Glide"
+>>>>>>> c1d5c6675ed74583ed56149ad001760d40015135
 run/main_scene="uid://bqd2m0sf2h08o"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"

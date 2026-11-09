@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpigvg3rkq1lh"]
+
+[ext_resource type="Script" uid="uid://cgp46j44325ap" path="res://scenes/pufferfish.gd" id="1_ry8r6"]
+[ext_resource type="Texture2D" uid="uid://blit0fhaue0rh" path="res://pufferfish-Recovered.png" id="1_vqe7j"]
+
+[node name="Pufferfish" type="Area2D"]
+script = ExtResource("1_ry8r6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_vqe7j")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(3, 3)
+polygon = PackedVector2Array(-6.5, -10, -8, -9.1, -12.4, -6.200001, -14, -6.5, -16, -5.5, -18.3, -2.8999996, -20.5, -4, -25, -3, -26, 0.5, -25, 6, -24, 8, -22.5, 9.5, -18, 5, -17, 9, -15.5, 10.5, -13.4, 9.200001, -11, 11, -11, 12.700001, 4, 14.5, 8, 14.5, 15.599998, 11, 17.5, 10, 18.8, 3, 18.5, -0.5, 15, -6.700001, 14, -8.5)
